@@ -17,13 +17,14 @@ const Photo = () => {
         <motion.div
         initial={{ opacity: 0 }}
         animate={{
-          opacity: 1,
+          opacity: 1, 
+          x:20,
           transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
         }}
-        className="w-[298px] h-[298px] xl:w-[330px] xl:h-[398px] mix-blend-lighten absolute">
+        className="w-[298px] h-[298px] xl:w-[275px] xl:h-[450px] mix-blend-lighten absolute">
 
           <Image
-            src="/assets/p0.png"  
+            src="/assets/out.png"  
             priority
             fill
             alt=""
