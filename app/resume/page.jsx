@@ -34,8 +34,8 @@ const about = {
 
 const experience = {
   icon: '/assets/resume/badge.svg',
-  title: "My experience",
-  description: "a passionate software engineer, my goal is to continuously push the boundaries of technology, creating innovative solutions that make a meaningful impact on the world.",
+  title: "My Experience",
+  description: "A passionate software engineer, my goal is to continuously push the boundaries of technology, creating innovative solutions that make a meaningful impact on the world.",
   items: [
     {
     company: "Bytematic IT Solutions",
@@ -53,7 +53,7 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
-  Description: "asdasdasdsadas",
+  Description: "",
   items: [
     {
       institution: "Stevens Institute of Technology",
@@ -71,7 +71,7 @@ const education = {
 
 const skills = {
   title: "My skills",
-  description: "asdsadsadsadsa",
+  description: "",
   skillList: [
   {
     icon: <FaHtml5 />,
