@@ -17,16 +17,12 @@ const about = {
       fieldValue: "15 months",
     },
     {
-      fieldName: "Email",
-      fieldValue: "jcshashank@gmail.com",
-    },
-    {
       fieldName: "Freelance",
       fieldValue: "Available",
     },
     {
-      fieldName: "name",
-      fieldValue: "Shashank",
+      fieldName: "Email",
+      fieldValue: "jcshashank@gmail.com",
     },
   ],
 
@@ -53,7 +49,7 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
-  Description: "",
+  description: "",
   items: [
     {
       institution: "Stevens Institute of Technology",

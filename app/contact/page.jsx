@@ -20,11 +20,7 @@ const info = [
     title: 'Address',
     description: 'Harrison, New Jersey',
   },
-  {
-    icon: <FaPhoneAlt />,
-    title: 'Phone',
-    description: 'asdasd',
-  },
+
 ]
 
 const Contact = () => {
@@ -46,7 +42,7 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input type="firstname" placeholder="Firstname" />
                 <Input type="lastname" placeholder="Lastname" />
-                <Input type="email" placeholder="email" />
+                <Input type="email" placeholder="Email" />
               </div>
               <Select>
                 <SelectTrigger className="w-full">
