@@ -1,6 +1,8 @@
 "use client"
 
-
+import Social from "@/components/Social"
+import { FiDownload } from "react-icons/fi"
+import { Button } from "@/components/ui/button";
 import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs, } from "react-icons/fa"
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si"
 
@@ -153,6 +155,19 @@ const Resume = () => {
                             )
                           })}
                         </ul>
+                        <div className="flex flex-col xl:flex-row items-center gap-8">
+                        <a href="/assets/resume/Shashank_Janagam_chandra_Resume.pdf" download>
+                          <Button
+                            variant="outline"
+                            size="lg"
+                            className="uppercase flex items-center gap-2 mt-4">
+                            <span>Download CV</span>
+                            <FiDownload className="text-xl" />
+                          </Button>
+                          </a>
+                          <div className="mb-8 xl:mb-0">
+                          </div>
+                        </div>
                       </ScrollArea>
                     </div>
                   </TabsContent>
