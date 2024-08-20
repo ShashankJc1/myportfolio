@@ -11,11 +11,6 @@ import {motion} from "framer-motion"
 
 const info = [
   {
-    icon: <FaPhoneAlt />,
-    title: 'Phone',
-    description: 'asdasd',
-  },
-  {
     icon: <FaEnvelope />,
     title: 'Email',
     description: 'jcshashank@gmail.com',
@@ -23,7 +18,7 @@ const info = [
   {
     icon: <FaMapMarkerAlt />,
     title: 'Address',
-    description: '',
+    description: 'Harrison, New Jersey',
   },
   {
     icon: <FaPhoneAlt />,
