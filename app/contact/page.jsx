@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/select";
 import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import emailjs from 'emailjs-com'; // Import EmailJS
+import emailjs from "emailjs-com"; // Import EmailJS
 
 const info = [
   {
@@ -39,8 +39,7 @@ const Contact = () => {
     message: "",
   });
 
-  const [statusMessage, setStatusMessage] = useState("");
-
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -59,8 +58,8 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted!");  // Debugging statement
-  
+    console.log("Form submitted!"); // Debugging statement
+
     const templateParams = {
       firstname: formData.firstname,
       lastname: formData.lastname,
@@ -68,24 +67,27 @@ const Contact = () => {
       service: formData.service,
       message: formData.message,
     };
-  
-    console.log(templateParams);  // Debugging statement
-  
-    emailjs.send(
-      'service_70rmh39',
-      'template_6wdr3ut',
-      templateParams,
-      '-Of9rCgPPYAg52Dhw'
-    )
-    .then((response) => {
-      console.log('SUCCESS!', response.status, response.text);
-      setStatusMessage("Message sent successfully!");
-    }, (err) => {
-      console.error('FAILED...', err);
-      setStatusMessage("Failed to send the message. Please try again later.");
-    });
+
+    console.log(templateParams); // Debugging statement
+
+    emailjs
+      .send(
+        "service_70rmh39",
+        "template_6wdr3ut",
+        templateParams,
+        "-Of9rCgPPYAg52Dhw"
+      )
+      .then(
+        (response) => {
+          console.log("Form submitted successfully"); // Debugging statement
+          setIsSubmitted(true); // Update the state to indicate form submission
+          console.log("isSubmitted:", isSubmitted); // Check the state value
+        },
+        (err) => {
+          console.error("FAILED...", err);
+        }
+      );
   };
-  
 
   return (
     <motion.section
@@ -99,62 +101,67 @@ const Contact = () => {
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
-            >
-              <h3 className="text-4xl text-accent">Let's work together</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input
-                  name="firstname"
-                  type="text"
-                  placeholder="Firstname"
-                  value={formData.firstname}
+            {!isSubmitted ? (
+              <form
+                onSubmit={handleSubmit}
+                className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
+              >
+                <h3 className="text-4xl text-accent">Let's work together</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Input
+                    name="firstname"
+                    type="text"
+                    placeholder="Firstname"
+                    value={formData.firstname}
+                    onChange={handleInputChange}
+                  />
+                  <Input
+                    name="lastname"
+                    type="text"
+                    placeholder="Lastname"
+                    value={formData.lastname}
+                    onChange={handleInputChange}
+                  />
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <Select onValueChange={handleSelectChange}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select a service" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      <SelectLabel>Select a service</SelectLabel>
+                      <SelectItem value="Web Development">
+                        Web Development
+                      </SelectItem>
+                      <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+                      <SelectItem value="General">General</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+                <Textarea
+                  name="message"
+                  className="h-[200px]"
+                  placeholder="Type your message here."
+                  value={formData.message}
                   onChange={handleInputChange}
                 />
-                <Input
-                  name="lastname"
-                  type="text"
-                  placeholder="Lastname"
-                  value={formData.lastname}
-                  onChange={handleInputChange}
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                />
+                <Button size="md" className="max-w-40" type="submit">
+                  Send message
+                </Button>
+              </form>
+            ) : (
+              <div className="p-10 bg-[#27272c] rounded-xl text-white">
+                <h3 className="text-4xl text-accent mb-4">Thank you!</h3>
+                <p>Your message has been sent. I'll get back to you soon.</p>
               </div>
-              <Select onValueChange={handleSelectChange}>
-                <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="Web Development">
-                      Web Development
-                    </SelectItem>
-                    <SelectItem value="UI/UX Design">
-                      UI/UX Design
-                    </SelectItem>
-                    <SelectItem value="General">General</SelectItem>
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-              <Textarea
-                name="message"
-                className="h-[200px]"
-                placeholder="Type your message here."
-                value={formData.message}
-                onChange={handleInputChange}
-              />
-              <Button size="md" className="max-w-40" type="submit">
-                Send message
-              </Button>
-            </form>
+            )}
           </div>
           <div
             className="flex-1 flex items-center xl:justify-end order-1
