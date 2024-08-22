@@ -11,35 +11,36 @@ import Image from "next/image"
 import WorkSliderBtns from "@/components/ui/WorkSliderBtns"
 
 const projects = [
+
   {
     num: '01',
-    category: 'Books Recommendation system',
+    category: 'YouTube Video Summarizer',
     title:'Project 1',
-    description: "The Books Recommendation Web App is a platform that uses machine learning algorithms like KNN and SVD to recommend the top 10 books based on ratings and cosine similarity. It features a clean and user-friendly interface built with HTML, CSS, Bootstrap, and JavaScript, and utilizes Express.js and Node.js for the backend, with MongoDB as the database. The system leverages a cleaned Goodreads dataset to provide personalized book recommendations.",
-    stack: [{name: "Html"}, {name: "css"}, {name: "Javascript"}, {name: "Node.js"}, {name: "MongoDB"}, {name: "KNN and SVD (ML)"}],
-    image: '/assets/img.webp',
-    live:"",
-    github: "https://github.com/ShashankJc1/book-recommendation-system",
+    description: "Developed a YouTube video summarizer powered by Gemini, enabling users to generate concise summaries from video links instantly. Streamlines content consumption by delivering key insights in just a few clicks.",
+    stack: [{name: "Gemini"}, {name: "YouTube API"}, {name: "Python (NLP)"}],
+    image: '/assets/p2.webp',
+    live: "https://youtube-summarizer-1.onrender.com/",
+    github: "https://github.com/ShashankJc1/youtube-summarizer",
   },
   {
     num: '02',
-    category: 'YouTube Video Summarizer',
-    title:'Project 2',
-    description: "Developed a YouTube video summarizer powered by ChatGPT, enabling users to generate concise summaries from video links instantly. Streamlines content consumption by delivering key insights in just a few clicks.",
-    stack: [{name: "ChatGPT"}, {name: "YouTube API"}, {name: "Python (NLP)"}],
-    image: '/assets/p2.webp',
-    live: "",
-    github: "https://github.com/ShashankJc1/YT_summarizer",
-  },
-  {
-    num: '03',
     category: 'AI/ML',
-    title:'Project 3',
+    title:'Project 2',
     description: "Developed a personalized AI model to generate realistic images of myself based on text prompts, showcasing the versatility of AI in creative and professional applications. This project involved training the model with customized datasets, enabling high-quality image synthesis for various digital art and branding purposes.",
     stack: [{name: "Python"}, {name:"CUDA"}, {name:"ComfyUI"}],
     image: '/assets/a.jpg',
     live: "https://huggingface.co/jcshashank/mrstorme-lora/tree/main",
     github: "https://github.com/ShashankJc1/image_generator",
+  },
+  {
+    num: '03',
+    category: 'Books Recommendation system',
+    title:'Project 3',
+    description: "The Books Recommendation Web App is a platform that uses machine learning algorithms like KNN and SVD to recommend the top 10 books based on ratings and cosine similarity. It features a clean and user-friendly interface built with HTML, CSS, Bootstrap, and JavaScript, and utilizes Express.js and Node.js for the backend, with MongoDB as the database. The system leverages a cleaned Goodreads dataset to provide personalized book recommendations.",
+    stack: [{name: "Html"}, {name: "css"}, {name: "Javascript"}, {name: "Node.js"}, {name: "MongoDB"}, {name: "KNN and SVD (ML)"}],
+    image: '/assets/img.webp',
+    live:"",
+    github: "https://github.com/ShashankJc1/book-recommendation-system",
   },
 ]
 
