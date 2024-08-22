@@ -26,7 +26,7 @@ const projects = [
     num: '02',
     category: 'AI/ML',
     title:'Project 2',
-    description: "Developed a personalized AI model to generate realistic images of myself based on text prompts, showcasing the versatility of AI in creative and professional applications. This project involved training the model with customized datasets, enabling high-quality image synthesis for various digital art and branding purposes.",
+    description: "Developed a personalized AI model to generate realistic images of myself based on text prompts, showcasing the versatility of AI in creative and professional applications. This project involved training the model with customized datasets, enabling high-quality image synthesis for various digital art and branding purposes. Actual link to model is private since anyone can create my images",
     stack: [{name: "Python"}, {name:"CUDA"}, {name:"ComfyUI"}],
     image: '/assets/a.jpg',
     live: "https://huggingface.co/jcshashank/mrstorme-lora/tree/main",
